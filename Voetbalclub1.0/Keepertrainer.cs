@@ -10,12 +10,7 @@ namespace Voetbalclub1._0
     {
         public int AantalKeepers { get; set; }
 
-        public Keepertrainer(string naam, int leeftijd, double loon, int aantalkeepers) : base(naam, leeftijd, loon)
-        {
-            AantalKeepers = aantalkeepers;
-        }
-
-        public Keepertrainer(string naam, int leeftijd, List<string> diplomas, double loon, int aantalkeepers) : base(naam, leeftijd, diplomas, loon)
+        public Keepertrainer(string voornaam, string familienaam, int leeftijd, List<string> diplomas, double loon, int aantalkeepers, List<string> voorbijeploegen, string huidigeploeg) : base(voornaam, familienaam, leeftijd, diplomas, loon, voorbijeploegen, huidigeploeg)
         {
             AantalKeepers = aantalkeepers;
         }

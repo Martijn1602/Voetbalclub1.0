@@ -10,12 +10,12 @@ namespace Voetbalclub1._0
     {
         public int LeeftijdPloeg { get; set; }
 
-        public Ploegtrainer(string naam, int leeftijd, double loon, int leeftijdploeg) : base(naam, leeftijd, loon)
+        public Ploegtrainer(string voornaam, string familienaam, int leeftijd, List<string> diplomas, double loon, List<string> voorbijeploegen, string huidigeploeg, int leeftijdploeg) : base(voornaam, familienaam, leeftijd, diplomas, loon, voorbijeploegen, huidigeploeg)
         {
             LeeftijdPloeg = leeftijdploeg;
         }
 
-        public Ploegtrainer(string naam, int leeftijd, List<string> diplomas, double loon, int leeftijdploeg) : base(naam, leeftijd, diplomas, loon)
+        public Ploegtrainer(string voornaam, string familienaam, int leeftijd, List<string> diplomas, double loon, int leeftijdploeg, List<string> voorbijeploegen, string huidigeploeg) : base(voornaam, familienaam, leeftijd, diplomas, loon, voorbijeploegen, huidigeploeg)
         {
             LeeftijdPloeg = leeftijdploeg;
         }

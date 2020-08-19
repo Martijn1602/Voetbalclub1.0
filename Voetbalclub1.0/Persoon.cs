@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,33 +9,40 @@ namespace Voetbalclub1._0
 {
     public class Persoon
     {
-        public string Naam { get; set; }
-        public int Leeftijd { get; set; }
-        public List<string> Ploegen { get; set; }
+        public string Voornaam { get; set; }
 
-        public Persoon(string naam, int leeftijd, List<string> ploegen)
+        public string Familienaam { get; set; }
+        public int Leeftijd { get; set; }
+        public List<string> VoorbijePloegen { get; set; }
+
+        public string HuidigePloeg { get; set; }
+
+        public Persoon(string voornaam, string familienaam, int leeftijd, List<string> voorbijeploegen, string huidigeploeg)
         {
-            Naam = naam;
+            Voornaam = voornaam;
+            Familienaam = familienaam;
             Leeftijd = leeftijd;
-            Ploegen = ploegen;
+            VoorbijePloegen = voorbijeploegen;
+            HuidigePloeg = huidigeploeg;
         }
 
-        public Persoon(string naam, int leeftijd)
+        public Persoon(string voornaam, string familienaam, int leeftijd, string huidigeploeg)
         {
-            Naam = naam;
+            Voornaam = voornaam;
+            Familienaam = familienaam;
             Leeftijd = leeftijd;
-            Ploegen = new List<string>();
+            HuidigePloeg = huidigeploeg;
         }
 
         public virtual string Beschrijf()
         {
             string beschrijving;
 
-            if (Ploegen.Count != 0)
+            if (VoorbijePloegen.Count != 0)
             {
-                beschrijving = $"Deze persoon heet {Naam}, wiens leeftijd is {Leeftijd} met de als voorbije ploegen";
+                beschrijving = $"Deze persoon heet {Voornaam} {Familienaam} en is {Leeftijd} jaar oud. Deze persoon speelt nu bij {HuidigePloeg} en voordien bij {VoorbijePloegen}";
 
-                foreach (var item in Ploegen)
+                foreach (var item in VoorbijePloegen)
                 {
                     beschrijving += " " + item;
                 }
@@ -43,7 +51,7 @@ namespace Voetbalclub1._0
             }
             else
             {
-                beschrijving = $"Deze persoon heet {Naam}. Diens leeftijd is {Leeftijd}. ";
+                beschrijving = $"Deze persoon heet {Voornaam} {Familienaam} en is {Leeftijd} jaar oud. Deze persoon speelt nu bij {HuidigePloeg}.";
             }
 
             return beschrijving;
@@ -51,7 +59,8 @@ namespace Voetbalclub1._0
 
         public override string ToString()
         {
-            return Naam;
+            return Familienaam;
+            
         }
     }
 }

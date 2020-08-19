@@ -10,12 +10,7 @@ namespace Voetbalclub1._0
     {
         public List<string> GekendeBewegingen { get; set; }
 
-        public Techniektrainer(string naam, int leeftijd, double loon, List<string> gekendebewegingen) : base(naam, leeftijd, loon)
-        {
-            GekendeBewegingen = gekendebewegingen;
-        }
-
-        public Techniektrainer(string naam, int leeftijd, List<string> diplomas, double loon, List<string> gekendebewegingen) : base(naam, leeftijd, diplomas, loon)
+        public Techniektrainer(string voornaam, string familienaam, int leeftijd, List<string> diplomas, double loon, List<string> voorbijeploegen, string huidigeploeg, List<string> gekendebewegingen) : base(voornaam, familienaam, leeftijd, diplomas, loon, voorbijeploegen, huidigeploeg)
         {
             GekendeBewegingen = gekendebewegingen;
         }
